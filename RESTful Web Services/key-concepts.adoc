@@ -98,12 +98,15 @@ HTTP defines a set of build-in cache semantics which gives a fine-grained contro
 
 === 6.1 Expires Headers
 A HTTP Header Response `Expires` tells the browser that it can be cached and for how long. +
-The value is a `Date` in the future when the data is no longer valid, incase the date is reached then the data should not be used and be retrieved again from server. +
+The value is a `Date` in the future when the data is no longer valid, incase the date is reached then the data should not be used and be retrieved again from server.
+
+[NOTE]
+HTTP/1.0 Specification
 
 Sample Response with `Expires`
 [source]
 ----
-HTTP/1.1 200 OK
+HTTP/1.0 200 OK
 Content Type: application/xml
 Expires: Wed, 26 September 2018 17:30 PM GMT
 
@@ -113,6 +116,8 @@ Expires: Wed, 26 September 2018 17:30 PM GMT
 The code implementation is done using `javax.ws.rs.core.Response` object
 
 .CustomerResource.java
+
+:source-highlighter: pygments
 [source, java]
 ----
 @Path("/customers")
@@ -131,8 +136,37 @@ public class CustomerResource {
   }
 }
 ----
-<1> `Expires` added to Response
+<1> The method sets the `Expires` header to the string date format the header expects.
 
 === 6.2 Cache-Control
+`Cache-Control` header has more richer explicit control over browser and CDN/proxy caches. +
+It has a variable set of  comma-delimited directives that define who can cache, how and for how long.
+
+[NOTE]
+HTTP/1.1 Specification, `Expires` is *deprecated*
+
+==== 6.2.1 `private`
+The `private` directive states that *no shared intermediary (proxy/CDN)* is allowed to cache the response. +
+Only the client caches the data.
+
+==== 6.2.2 `public`
+The `public` directive indicates that *any entity* can cache the response.
+
+==== 6.2.3 `no-cache`
+The `no-cache` directive indicates the response *should not be cached* by any entity. +
+If the data is cached then it should not be used to satisfy a request unless it is revalidated by the server.
+
+==== 6.2.4 `no-store`
+The `no-store` directs browser or proxies *not to store cached response on the disk*.
+
+==== 6.2.5 `no-transform`
+The `no-transform` *disallows transformation of cached response* _e.g., compressing images,_ by the intermediary proxies.
+
+==== 6.2.6 `max-age`
+The `max-age` directive indicates *for how many seconds* the cached response is valid. +
+It gets precedence over `Expires` if both are in response.
+
+==== 6.2.7 `s-maxage`
+The `s-maxage` directive is similar to `max-age` but specified the *max time a shared, intermediary (proxies) is allowed to hold the cached response*.
 
 === 6.3 Revalidation and Conditional GETs
