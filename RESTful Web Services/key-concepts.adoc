@@ -1,55 +1,105 @@
-Key Concepts
-============
+= Key Concepts
 
 == 1. Principles of REST Architecture
 
 === 1.1 Addressable Resources
+
 === 1.2 A Uniform, Constrained Interface
+
 === 1.3 Representation Oriented
+
 === 1.4 Communicate Statelessly
+
 === 1.5 Hypermedia As The Engine Of Application State (HATEOAS)
 
 == 2. JAX-RS Injection
+
 === 2.1 @PathParam
+
 === 2.2 @MatrixParam
+
 === 2.3 @QueryParam
+
 === 2.4 @FormParam
+
 === 2.5 @HeaderParam
+
 === 2.6 @CookieParam
+
 === 2.7 @Context
+
 === 2.8 @BeanParam
 
 == 3. Server Responses and Exception Handling
+
 === 3.1 Default Successful Responses
+
 === 3.2 Default Error Responses
+
 === 3.3 Complex Responses
+
 === 3.4 Returning Cookies
+
 === 3.5 Status Enum
+
 === 3.6 Exception Handling
+
 === 3.7 Exception Mapping
+
 === 3.8 Exception Hierarchy
 
 == 4. JAX-RS Client
+
 === 4.1 Client Introduction
+
 === 4.2 Bootstrapping with Client Builder
+
 === 4.3 Client and Web Target
+
 === 4.4 Building and Invoking Request
+
 === 4.5 Invocation
+
 === 4.6 Exception Handling
+
 === 4.7 Configuration Scope
 
 == 5. HTTP Content Negotiation
+
 === 5.1 Conneg Explained
+
 === 5.2 Preference Ordering
+
 === 5.3 Language Negotiation
+
 === 5.4 Encoding Negotiation
+
 === 5.5 JAX-RS and Conneg
+
 === 5.6 Negotiation with URI Patterns
+
 === 5.7 Leveraging Content Negotiation
+
 === 5.8 Creating New Media-Types
+
 === 5.9 Flexible Schema
 
 == 6. HTTP Caching
+*Browser cache*, when browser stores some of the static content within the local storage. +
+*Proxy cache* (CDNs), when a pseudo-web server cache static content in order to ease load on the main server and serves directly to the client bypassing the main server.
+
+[NOTE]
+Any Server URI that can be reached with an HTTP *GET* is a candidate for caching as they are [.underline]#idempotent# and [.underline]#read-only#
+
+[NOTE]
+Dynamic Data that are concurrently accessed can also be a candidate for caching.
+
+HTTP defines a set of build-in cache semantics which gives a fine-grained control over caching behavior of both browser and proxy caches.
+
 === 6.1 Expires Headers
+A HTTP Header Response #`Expires`# tells the browser that it can be cached and for how long. +
+The value is a `Date` in the future when the data is no longer valid, incase the date is reached then the data should not be used and be retrieved again from server.
+
 === 6.2 Cache-Control
+
 === 6.3 Revalidation and Conditional GETs
