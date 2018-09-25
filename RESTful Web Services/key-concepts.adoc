@@ -97,8 +97,41 @@ Dynamic Data that are concurrently accessed can also be a candidate for caching.
 HTTP defines a set of build-in cache semantics which gives a fine-grained control over caching behavior of both browser and proxy caches.
 
 === 6.1 Expires Headers
-A HTTP Header Response #`Expires`# tells the browser that it can be cached and for how long. +
-The value is a `Date` in the future when the data is no longer valid, incase the date is reached then the data should not be used and be retrieved again from server.
+A HTTP Header Response `Expires` tells the browser that it can be cached and for how long. +
+The value is a `Date` in the future when the data is no longer valid, incase the date is reached then the data should not be used and be retrieved again from server. +
+
+Sample Response with `Expires`
+[source]
+----
+HTTP/1.1 200 OK
+Content Type: application/xml
+Expires: Wed, 26 September 2018 17:30 PM GMT
+
+<customer id="123">...</customer>
+----
+
+The code implementation is done using `javax.ws.rs.core.Response` object
+
+.CustomerResource.java
+[source, java]
+----
+@Path("/customers")
+public class CustomerResource {
+
+  @Path("{id}")
+  @GET
+  @Produces("application/xml")
+  public Response getCustomers(@PathParam("id") int id) {
+    Customer cust = findCustomer(id);
+    ResponseBuilder builder = Response.ok(cust, "application/xml");
+    Date date = Calendar.getInstance(TimeZone.getTimeZone("GMT"))
+                            .set(2018, 9, 26, 17, 30, 0);
+    builder.expires(date); // <1>
+    return builder.build();
+  }
+}
+----
+<1> `Expires` added to Response
 
 === 6.2 Cache-Control
 
