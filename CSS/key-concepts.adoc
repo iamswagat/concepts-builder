@@ -1,0 +1,23 @@
+= Key Concepts - CSS
+Swagat Srichandan <swagatchandan@gmail.com>
+v1.0, 9/13/2018
+
+== 1. Syntax, Forms
+
+== 2. Box Model
+
+== 3. Margin Collapse
+
+== 4. Containing Block
+
+== 5. Stacking and Block-formatting
+
+== 6. Initial, Computed, Used and Actual Values
+
+== 7. CSS Shorthand properties
+
+== 8. Flexible Box Layout
+
+== 9. Grid Layout
+
+== 10. Media Queries

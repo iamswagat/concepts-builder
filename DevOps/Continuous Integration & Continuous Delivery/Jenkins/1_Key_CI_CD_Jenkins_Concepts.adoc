@@ -1,0 +1,92 @@
+Key CI/CD/Jenkins Concepts
+==========================
+
+This topic comprises approximately 18% of the exam. The topics to be covered are as below.
+
+== 1. Continuous Delivery/Continuous Integration Concepts
+
+=== 1.1 Define Continuous Integration, Continuous Delivery, Continuous Deployment
+
+==== Continuous Integration
+It is a software development practice where members of a team integrate their work frequently, each integration is verified by an automated build to detect integration errors as quickly as possible.
+
+===== Practices of Continuous Integration
+Key practices that make up effective CI.
+
+Maintain Single Source Of Truth (Repository)::
+a. Get a Source Code Management (SCM) tool
+b. Make sure it is well known for everyone to get source code.
+c. Add in SCM everything you need to build anything, nothing that you actually build.
+d. Have a *mainline*: a single branch of the project currently under development
+
+Automate the build::
+a. Include everything in an automated build: `including getting database schema out the repo and firing it up in execution environment`
+b. Build script should allow you to build alternative targets for different cases.
+c. Essential to have a master build that is usable on a server and runnable from scripts.
+
+Make your build Self-Testing::
+a. Include automated test in build.
+b. Automated tests must be able to check a large part of the code base for bugs. `Code Coverage should be high for the self-testing`
+c. The result of running the test suite should indicate if any tests failed.
+d. For a build to be self-testing the failure of a test should cause the build to fail.
+
+Everyone Commits To the Mainline Every Day::
+a. Correct the build is the main target which includes passing the test.
+b. a commit cycle should be as >>> (1) the developer first updates their working copy to match the mainline, (2) resolves any conflicts with the mainline, (3) then builds on their local machine. (4) If the build passes, then they are free to commit to the mainline.
+c. With developers committing every few hours a conflict can be detected within a few hours of it occurring, at that point not much has happened and it's easy to resolve. Conflicts that stay undetected for weeks can be very hard to resolve.
+d. Frequent commits encourage developers to break down their work into small chunks of a few hours each. This helps track progress and provides a sense of progress.
+
+Every Commit Should Build the Mainline on an Integration Machine::
+a. The mainline should stay in a healthy state.
+b. Ensure that regular builds happen on an integration machine and only if this integration build succeeds should the commit be considered to be `done`.
+c. A continuous integration server acts as a monitor to the repository. Every time a commit against the repository finishes the server automatically checks out the sources onto the integration machine, initiates a build, and notifies the committer of the result of the build. The committer isn't done until she gets the notification - usually an email.
+
+Fix Broken Builds Immediately::
+a. A key part of doing a continuous build is that if the mainline build fails, it needs to be fixed right away.
+b. Often the fastest way to fix the build is to revert the latest commit from the mainline, taking the system back to the last-known good build.
+c. To avoid breaking the mainline; consider using a pending head.footnote:[*Pending Head* - when you are working on a feature, commit to a private branch which is visible to everyone but not accessible to others. Only when you had a successful build on the build machine would you upgrade your edition into a release, which was the equivalent to the mainline.]
+
+Keep the Build Fast::
+a. Setup a *development pipeline* where multiple builds done in sequence.
+b. Commit to mainline triggers *commit build* which is the first build.
+
+==== Continuous Delivery
+
+
+=== 1.2 Difference between CI and CD
+
+=== 1.3 Stages of CI and CD
+
+=== 1.4 Continuous Delivery vs Continuous Deployment
+
+== 2. Jobs
+
+=== 2.1. What are jobs in Jenkins?
+
+=== 2.2. Types of Jobs
+
+=== 2.3 Scope of Jobs
+
+== 3. Builds
+
+== 4. Source
+
+== 5. Testing
+
+== 6. Notifications
+
+== 7. Distributed Builds
+
+== 8. Plugins
+
+== 9. Jenkins Rest API
+
+== 10. Security
+
+== 11. Fingerprints
+
+== 12. Artifacts
+
+== 13. Third Party Tools
+
+== 14. Installation Wizard

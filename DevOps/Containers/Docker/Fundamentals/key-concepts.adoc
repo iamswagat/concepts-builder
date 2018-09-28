@@ -1,0 +1,27 @@
+Docker Fundamentals
+===================
+
+== Objective
+* [*] Understand the foundations of containerization on a single Docker node
+* [*] Create an image using Dockerfile best practices
+* [*] Use volumes in the application development process
+* [*] Apply concepts of the Docker networking model
+* [*] Understand the goal of services as a method of scaling containers
+* [*] Utilize two different orchestrators (Swarm and Kubernetes) to deploy a single application across multiple machines
+* [*] Create a secret and understand its accessibility capabilities
+
+== The Docker Story
+
+== Introduction to Images
+
+== Creating Images
+
+== System Commands
+
+== Docker Networking Basics
+
+== Docker Compose
+
+== Scaling out with Swarm Mode and Kubernetes
+
+== Managing Secrets

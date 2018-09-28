@@ -1,0 +1,41 @@
+Docker Security Course
+======================
+
+== Objectives
+* [*] List all the Linux and network features imposed on containers by the Docker platform, and configure them where configurable
+* [*] Design and implement discretionary access control for users on the Docker EE platform
+* [*] Fully audit the provenance, contents, and actions taken by containerized software from creation as an image, through testing and QA, and into deployment as a container in production
+
+== Container Security
+
+=== Kernel Namespaces
+
+=== Root Capabilities
+
+=== Secure Computing Mode o Linux Security Modules
+
+== Network Security
+
+=== Default and Custom Network Encryption o Application Isolation
+
+== Role-based Access Control
+
+=== Discretionary Access Model
+
+=== LDAP Integration
+
+=== Multi-tenancy Isolation
+
+== Software Supply Chain
+
+=== Known Vulnerability Audits
+
+=== Identity Signing
+
+== Introspection
+
+=== Log Streaming
+
+=== Metric Tracking
+
+=== Auditing the Docker Platform

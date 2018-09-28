@@ -1,0 +1,19 @@
+= SASS - Syntactically Awesome Style Sheets
+Swagat Srichandan <swagatchandan@gmail.com>
+v1.0, 9/13/2018
+
+== 1. Preprocessing
+
+== 2. Variables
+
+== 3. Nesting
+
+== 4. Partials
+
+== 5. Imports
+
+== 6. Mixins
+
+== 7. Inheritance
+
+== 8. Operators

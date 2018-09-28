@@ -1,0 +1,53 @@
+Docker for Enterprise Developer
+===============================
+
+== Objective
+* [*] Describe the essential patterns used in a highly distributed EE application
+* [*] Understand how to configure EE applications for different environments without code changes.
+* [*] Produce and containerize an EE application that are scalable, accessible, and fault-tolerant
+* [*] Apply different debugging and testing techniques to containerized EE applications
+* [*] Build and run the sample application on your local system using Kubernetes
+
+== Architecture of a Highly Distributed Application
+
+== Development Pipeline Overview
+
+== Developing Applications Using Docker
+
+=== Editing and Continuation
+
+=== Debugging
+
+=== Docker Compose
+
+=== Testing
+
+=== Health Checking
+
+=== Defensive Programming
+
+=== Logging and Error Handling
+
+=== Docker Builder
+
+=== Docker Secrets
+
+=== Routing Mesh
+
+=== HTTP Routing Mesh
+
+== Continuous Integration and Delivery
+
+=== Docker Universal Control Plane and Trusted Registry
+
+=== Configuration Management
+
+=== Tagging and Versioning
+
+=== Content Trust
+
+=== Image Scanning
+
+=== Webhooks
+
+=== Image Promotion

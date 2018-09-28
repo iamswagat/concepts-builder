@@ -1,0 +1,8 @@
+Splunk
+======
+
+== 1. What is Splunk?
+
+=== 1.1 The Splunk Components
+
+1. Index Data - collects data from any source, label the machine-data according to the source type.

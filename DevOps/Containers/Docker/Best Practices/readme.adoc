@@ -1,0 +1,5 @@
+image::https://camo.githubusercontent.com/ef838a38abebf5398a43d2b2e000174bbe95acee/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37392f446f636b65725f28636f6e7461696e65725f656e67696e65295f6c6f676f2e706e67[Docker]
+
+
+* [*] link:https://docs.docker.com/develop/develop-images/dockerfile_best-practices/[dockerfile best practices]
+* [*] link:https://docs.docker.com/develop/dev-best-practices/[Development Best Practices]

@@ -1,0 +1,19 @@
+= DOM - Document Object Model
+Swagat Srichandan <swagatchandan@gmail.com>
+v1.0, 9/13/2018
+
+== 1. Events and the DOM
+
+== 2. Examples of web and XML development using the DOM
+
+== 3. How to create a DOM tree
+
+== 4. Introduction to the DOM
+
+== 5. Locating DOM elements using selectors
+
+== 6. Traversing an HTML table with JavaScript and DOM Interfaces
+
+== 7. Using the W3C DOM Level 1 Core
+
+== 8. Whitespace in the DOM
