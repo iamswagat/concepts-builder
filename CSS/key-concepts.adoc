@@ -2,22 +2,130 @@
 Swagat Srichandan <swagatchandan@gmail.com>
 v1.0, 9/13/2018
 
-== 1. Syntax, Forms
+*Cascading Style Sheets* are used to style and layout web pages - e.g., alter font, color, size and spacing of the content.
 
-== 2. Box Model
+== 1. Introduction to CSS
+=== 1.1 How CSS works
+==== 1.1.1 What is CSS?
+CSS is a language for specifying how documents are presented to users
 
-== 3. Margin Collapse
+==== 1.1.2 How does CSS affect HTML?
+Browsers apply *CSS Rules* to document to affect how they are displayed.
 
-== 4. Containing Block
+A CSS Rule is formed from::
+1. *Properties* -> which have values set to update how the HTML content is displayed e.g., `background-color`, `width`, `text`, `font` etc
+2. *Selector* ->which selects the element(s) you want to apply the updated property values to e.g.,`p`, `body`, `div` etc
 
-== 5. Stacking and Block-formatting
+[NOTE]
+``h1{ color: blue; }`` -- each property/value pair is called a *declaration*
 
-== 6. Initial, Computed, Used and Actual Values
+==== 1.1.3 How does CSS actually work?
+Its is 2 stage process::
+1. The browser converts HTML and CSS into the DOM. It combines the document's content with its style.
+2. The browser displays the contents of the DOM.
 
-== 7. CSS Shorthand properties
+image::https://mdn.mozillademos.org/files/11781/rendering.svg[rendering]
 
-== 8. Flexible Box Layout
+==== 1.1.4 About the DOM
+The DOM represents the document in the computer's memory. +
+1. The browser will parse the HTML and create a DOM from it +
+2. The browser will then parse the CSS and apply CSS rule to applicable elements via the selectors and properties.
 
-== 9. Grid Layout
+==== 1.1.5 How to apply your CSS to your HTML
+There are 3 ways for applying CSS in HTML document::
+1. External Stylesheet::
+CSS written in a separate file with a .css extension, and you reference it from an HTML `<link>` element
+2. Internal Stylesheet::
+CSS placed inside a `<style>` element, contained inside the HTML head
+3. Inline Styles::
+CSS declarations that affect one element only, contained within a style attribute.
+[CAUTION]
+Please don't do this, unless you really have to! It is really bad for maintenance
 
-== 10. Media Queries
+=== 1.2 CSS syntax
+==== 1.2.1 CSS Declarations
+image:https://mdn.mozillademos.org/files/3665/css%20syntax%20-%20declaration.png[CSS Declaration]
+[IMPORTANT]
+If a *property* is _unknown_ or if a *value* is not valid for a given property, the declaration is deemed invalid and is wholly ignored by the browser's CSS engine.
+
+==== 1.2.2 CSS Declaration Blocks
+image::https://mdn.mozillademos.org/files/3667/css%20syntax%20-%20declarations%20block.png[CSS Declaration Block]
+[NOTE]
+Blocks can sometimes be nested; in such cases opening and closing braces must be nested logically, in the same fashion as the tags of nested HTML elements. The most common example you'll come across are @-rules, which are blocks beginning with an @ identifier like `@media`, `@font-face`, etc
+
+==== 1.2.3 CSS Selectors and Rules
+image::https://mdn.mozillademos.org/files/3668/css%20syntax%20-%20ruleset.png[CSS Selectors and Rules]
+
+==== 1.2.4 CSS Statements
+Along with CSS Rules other CSS statements are::
+*At-rules* is a CSS statement that instructs CSS how to behave.
+[source, CSS]
+----
+/* General structure */
+@IDENTIFIER (RULE);
+----
+*Nested statements* are a specific subset of at-rule, the syntax of which is a nested block of CSS rules that will only be applied to the document if a specific condition is matched.
+[source, css]
+----
+@media (min-width: 801px) {
+  body {
+    margin: 0 auto;
+    width: 800px;
+  }
+}
+----
+=== 1.3 Selectors
+Different types of selectors::
+1. *Simple selectors* => Match one or more elements based on element type, `class`, or `id`.
+2. *Attribute selectors* => Match one or more elements based on their attributes/attribute values.
+3. *Pseudo-classes* => Match one or more elements that exist in a certain state
+4. *Pseudo-elements* => Match one or more parts of content that are in a certain position in relation to an element
+5. *Combinators* => combining two or more selectors in useful ways for very specific selections
+6. *Multiple selectors* =>  multiple selectors on the same CSS rule, separated by commas, to apply a single set of declarations to all the elements selected by those selectors.
+
+=== 1.4 Simple selectors
+==== 1.4.1 Element Selector or Type Selector
+This selector is just a case-insensitive match between the selector name and a given HTML element name.
+
+==== 1.4.2 Class Selector
+The class selector consists of a dot, '.', followed by a class name. A class name is any value, without spaces, placed within an HTML `class` attribute.
+
+==== 1.4.3 ID selector
+The ID selector consists of a hash/pound symbol (#), followed by the ID name of a given element. Any element can have a unique ID name set with the `id` attribute.
+
+==== 1.4.4 Universal selector
+It allows selecting all elements in a page, often used in combination with other selectors
+
+=== 1.5 Attribute selectors
+Attribute selectors are a special kind of selector that will match elements based on their attributes and attribute values.
+`[attr]` : This selector will select all elements with the attribute attr, whatever its value.
+`[attr=val]` : This selector will select all elements with the attribute attr, but only if its value is val.
+`[attr~=val]`: This selector will select all elements with the attribute attr, but only if  val is one of a space-separated list of words contained in attr's value.
+
+=== 1.6 Pseudo-classes and pseudo-elements
+=== 1.7 Combinators and multiple selectors
+=== 1.8 CSS values and units
+=== 1.9 Cascade and inheritance
+=== 1.10 The box model
+=== 1.11 Debugging CSS
+
+== 2. Styling Text
+=== 2.1 Fundamental text and font styling
+=== 2.2 Styling lists
+=== 2.3 Styling links
+=== 2.4 Web fonts
+
+== 3. Styling Boxes
+=== 3.1 Box model recap
+=== 3.2 Backgrounds
+=== 3.3 Borders
+=== 3.4 Styling tables
+=== 3.5 Advanced box effects
+
+== 4. CSS layout
+=== 4.1 Introduction
+=== 4.2 Floats
+=== 4.3 Positioning
+=== 4.4 Practical positioning examples
+=== 4.5 Flexbox
+=== 4.6 Grids

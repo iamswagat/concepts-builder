@@ -1,0 +1,25 @@
+= Key Concepts - Angular
+Swagat Srichandan <swagatchandan@gmail.com>
+v1.0, 10/1/2018
+
+== Architecture
+
+== Components & Templates
+
+== Forms
+
+== Observables & RxJS
+
+== Bootstrapping
+
+== NgModules
+
+== Dependencies Injection
+
+== HttpClient
+
+== Routing & Navigation
+
+== Animations
+
+== Testing
