@@ -97,15 +97,123 @@ The ID selector consists of a hash/pound symbol (#), followed by the ID name of 
 It allows selecting all elements in a page, often used in combination with other selectors
 
 === 1.5 Attribute selectors
-Attribute selectors are a special kind of selector that will match elements based on their attributes and attribute values.
-`[attr]` : This selector will select all elements with the attribute attr, whatever its value.
-`[attr=val]` : This selector will select all elements with the attribute attr, but only if its value is val.
+Attribute selectors are a special kind of selector that will match elements based on their attributes and attribute values. +
+`[attr]` : This selector will select all elements with the attribute attr, whatever its value. +
+`[attr=val]` : This selector will select all elements with the attribute attr, but only if its value is val. +
 `[attr~=val]`: This selector will select all elements with the attribute attr, but only if  val is one of a space-separated list of words contained in attr's value.
 
 === 1.6 Pseudo-classes and pseudo-elements
+==== 1.6.1 Pseudo-Classes
+A CSS pseudo-class is a keyword added to the end of a selector, preceded by a colon (:), which is used to specify that you want to style the selected element but only when it is in a certain state. +
+[cols=3*]
+|===
+|`:active`
+|`:checked`
+|`:default`
+|`:dir()`
+|`:disabled`
+|`:empty`
+|`:enabled`
+|`:first`
+|`:first-child`
+|`:first-of-type`
+|`:fullscreen`
+|`:focus`
+|`:focus-within`
+|`:hover`
+|`:indeterminate`
+|`:in-range`
+|`:invalid`
+|`:lang()`
+|`:last-child`
+|`:last-of-type`
+|`:left`
+|`:link`
+|`:matches()`
+|`:not()`
+|`:nth-child()`
+|`:nth-last-child()`
+|`:nth-last-of-type()`
+|`:nth-of-type()`
+|`:only-child`
+|`:only-of-type`
+|`:optional`
+|`:out-of-range`
+|`:read-only`
+|`:read-write`
+|`:required`
+|`:right`
+|`:root`
+|`:scope`
+|`:target`
+|`:valid`
+|`:visited`
+|
+|===
+
+==== 1.6.2 Pseudo-Elements
+A CSS pseudo-element is a keyword added to the end of a selector, preceded by two colons (::), that can be added to the end of selectors to select a certain part of an element.
+[cols=3*]
+|===
+|`::after` +
+|`::before` +
+|`::first-letter` +
+|`::first-line` +
+|`::selection` +
+|`::backdrop`
+|===
 === 1.7 Combinators and multiple selectors
+CSS has several ways to select elements based on how they are related to one another. Those relationships are expressed with combinators as follows (A and B represent any selector seen above)
+[%header,cols=3*]
+|===
+|Name
+|Syntax
+|Selects
+
+|Group of selectors
+|A, B
+|Any element matching A and/or B
+
+|Descendant selector
+|A B, A >> B
+|Any element matching B that *is a descendant* of an element matching A
+
+|Child selector
+|A > B
+|Any element matching B that *is a direct child* of an element matching A.
+
+|Adjacent sibling selector
+|A + B
+|Any element matching B that *is the next sibling* of an element matching A
+
+|General sibling selector
+|A ~ B
+|Any element matching B that *is one of the next siblings* of an element matching A
+|===
 === 1.8 CSS values and units
+==== 1.8.1 Numeric values
+===== 1.8.1.1 Length and Size
+Absolute Units::
+* *Pixel* (`px`) -- always be the same size regardless of any other related settings.
+* `em` -- 1 `em` equals 16 `px`, is the same as the font-size width of a capital letter M
+* `rem` -- root `em` it will always equal the size of the default base `font-size`
+
+==== 1.8.2 Percentages
+==== 1.8.3 Colors
+==== 1.8.4 Functions
+
 === 1.9 Cascade and inheritance
+==== 1.9.1 What is Cascade in CSS
+An element may be matched by several selectors, therefore several rules may set a given property multiple times. CSS defines which one has precedence over the others and must be applied: this is called the *cascade algorithm*
+
+The three factors are (order of weight)::
+*Importance* -- `!important` has highest precedence in cascading algorithm for CSS
+*Specificity* -- is basically a measure of how specific a selector is — how many elements it could match.
+
+image::https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png[specificity]
+
+*Source Order*
+
 === 1.10 The box model
 === 1.11 Debugging CSS
 
