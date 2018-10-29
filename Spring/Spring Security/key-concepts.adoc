@@ -1,0 +1,13 @@
+SPRING SECURITY MICROSERVICE
+============================
+
+IMPORTANT READ
+====
+https://www.owasp.org/index.php/Authentication_Cheat_Sheet
+https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
+https://firebase.google.com/docs/auth/
+https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account?hl=is
+https://dzone.com/articles/authorization-access-control
+https://codeburst.io/i-believe-it-really-depends-on-your-environment-and-how-well-protected-the-different-pieces-are-7919bfa6bc86
+
+https://medium.com/@akourtim.ahmed/oauth-2-centralized-authorization-with-spring-boot-2-0-2-and-spring-security-5-and-jdbc-token-store-8dbc063bd5d4
