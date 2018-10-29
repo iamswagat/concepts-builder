@@ -1,8 +1,25 @@
 = Key Concepts - Angular
 Swagat Srichandan <swagatchandan@gmail.com>
 v1.0, 10/1/2018
+Angular::
+* is a platform or framework that makes it easy to build applications with the web.
+* combines declarative templates, dependency injection, end to end tooling and integrated best practices to solve development challenges.
 
 == Architecture
+=== Architecture Overview
+Angular is written in `TypeScript`. The basic building blocks of an Angular application is `NgModules`. NgModule provides compilation context for __components__. Every angular has a root NgModule that enables bootstrapping. +
+
+Components::
+* define __views__ which set the screen elements that Angular can choose and modify using code/logic.
+* uses __services__ which can be injected into components as dependencies
+
+Decorators::
+* Mark type for Components and Services and provide metadata that tells Angular how to use them.
+* Metadata of Component class associates it with a __template__ that defines a view. +
+  *Template* combines HTML with Angular directives and binding markup that allows Angular to modify the HTML before rendering.
+* Metadata of Service class provides the information Angular needs to make it available to components thru DI (Dependency Injection).
+
+`Router` service helps to define navigation paths among views and provides sophisticated in-browser navigation capabilities.
 
 == Components & Templates
 
